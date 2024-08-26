@@ -10,3 +10,9 @@ public class Producto
         Nombre = nombre;
         Precio = precio;
     }
+    
+    public override string ToString()
+    {
+        return $"ID: {Id}, Nombre: {Nombre}, Precio: {Precio:C}";
+    }
+}
