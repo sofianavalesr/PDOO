@@ -3,18 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-public class Producto
-{
-    public int Id { get; set; }
-    public string Nombre { get; set; }
-    public decimal Precio { get; set; }
-
-    public Producto(int id, string nombre, decimal precio)
-    {
-        Id = id;
-        Nombre = nombre;
-        Precio = precio;
-    }
 
     public override string ToString()
     {
@@ -22,18 +10,6 @@ public class Producto
     }
 }
 
-public class Sistema
-{
-    public List<Producto> Productos { get; private set; }
-    public List<Mesa> Mesas { get; private set; }
-    public List<Factura> Facturas { get; private set; }
-
-    public Sistema()
-    {
-        Productos = new List<Producto>();
-        Mesas = new List<Mesa>();
-        Facturas = new List<Factura>();
-    }
 
     public void ImprimirMenu()
     {
