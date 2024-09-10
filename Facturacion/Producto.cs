@@ -1,6 +1,7 @@
 namespace Facturacion;
 public class Producto
 {
+    private int test;
     private int Id { get; set; }
     private string Nombre { get; set; }
     private decimal Precio { get; set; }
