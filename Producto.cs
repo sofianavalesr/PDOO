@@ -1,3 +1,4 @@
+namespace Facturacion;
 public class Producto
 {
     private int Id { get; set; }

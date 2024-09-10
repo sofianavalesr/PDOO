@@ -1,6 +1,7 @@
+namespace Facturacion;
 class Mesa
     {
-        private int Numero { get; set; }
+        private int numero;
         private List<Producto> productos { get; set; } 
         public Mesa(){
            productos = new List<Producto>(); 

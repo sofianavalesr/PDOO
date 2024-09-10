@@ -1,6 +1,7 @@
+namespace Facturacion;
+
 using System;
 using System.Collections.Generic;
-
 class Programa
 {
     static void Main(string[] args)
