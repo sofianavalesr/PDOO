@@ -7,6 +7,9 @@ public class Producto
     private decimal Precio { get; set; }
     private string Descripcion{get;set;}
 
+    public Producto(){
+
+    }
     public Producto(int id, string nombre, decimal precio)
     {
         Id = id;

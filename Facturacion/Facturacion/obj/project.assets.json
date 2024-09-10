@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Facturacion\\Facturacion\\Facturacion.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\PDOO\\Facturacion\\Facturacion\\Facturacion.csproj",
       "projectName": "Facturacion",
-      "projectPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Facturacion\\Facturacion\\Facturacion.csproj",
+      "projectPath": "C:\\Users\\Usuario\\Desktop\\PDOO\\Facturacion\\Facturacion\\Facturacion.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\Facturacion\\Facturacion\\obj\\",
+      "outputPath": "C:\\Users\\Usuario\\Desktop\\PDOO\\Facturacion\\Facturacion\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"

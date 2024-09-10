@@ -13,7 +13,8 @@ class Programa
             new Producto(3, "Ensalada", 4.99m),
             new Producto(4, "Refresco", 1.99m)
         };
-
+        Console.WriteLine(menu.ElementAt(0));
+        /*
         List<Mesa> mesas = new List<Mesa>();
         for (int i = 1; i <= 10; i++)
         {
@@ -190,6 +191,6 @@ class Programa
             }
 
             Console.WriteLine();
-        }
+        }*/
     }
 }
