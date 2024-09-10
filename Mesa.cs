@@ -1,19 +1,22 @@
 class Mesa
     {
-        public int Numero { get; set; }
-        public List<Producto> Productos { get; set; } = new List<Producto>();
+        private int Numero { get; set; }
+        private List<Producto> productos { get; set; } 
+        public Mesa(){
+           productos = new List<Producto>(); 
+        }
 
         public void AgregarProducto(Producto producto)
         {
-            Productos.Add(producto);
+            productos.Add(producto);
         }
 
         public void EliminarProducto(int idProducto)
         {
-            Producto producto = Productos.Find(p => p.Id == idProducto);
+            Producto producto = productos.Find(p => p.Id == idProducto);
             if (producto != null)
             {
-                Productos.Remove(producto);
+                productos.Remove(producto);
                 Console.WriteLine("Producto eliminado de la mesa.");
             }
             else
@@ -25,7 +28,7 @@ class Mesa
         public decimal ObtenerTotal()
         {
             decimal total = 0;
-            foreach (var producto in Productos)
+            foreach (var producto in productos)
             {
                 total += producto.Precio;
             }
@@ -35,7 +38,7 @@ class Mesa
         public void ImprimirCuenta()
         {
             Console.WriteLine($"Cuenta para la mesa {Numero}:");
-            foreach (var producto in Productos)
+            foreach (var producto in productos)
             {
                 Console.WriteLine(producto.ToString());
             }
