@@ -9,7 +9,7 @@ public class Mesa
 
     public void AgregarProducto(Producto producto)
     {
-        
+        productos.Add(producto);
     }
 
     public int Id { get => id; set => id = value; }
