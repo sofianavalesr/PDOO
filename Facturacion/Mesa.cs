@@ -9,7 +9,13 @@ public class Mesa
 
     public void AgregarProducto(Producto producto)
     {
-        productos.Add(producto);
+        if(producto!=null)
+        {
+            productos.Add(producto);
+        }
+        else{
+            Console.WriteLine("Error, el producto no existe");
+        }
     }
 
     public int Id { get => id; set => id = value; }
