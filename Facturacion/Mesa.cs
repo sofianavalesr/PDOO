@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class Mesa
 {
     private int Numero { get; set; }
-    public List<Producto> Productos { get; set; } = new List<Producto>();
+    private List<Producto> Productos { get; set; } = new List<Producto>();
 
     public void AgregarProducto(Producto producto)
     {
