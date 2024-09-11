@@ -16,25 +16,25 @@ namespace Facturacion
 
         // Constructor de la clase Restaurante
         public Restaurante()
-        {
-            // Inicializamos el menú y la lista de mesas
-            menu = new Menu();
-            mesas = new List<Mesa>();
+{
+    // Inicializamos el menú y la lista de mesas
+    menu = new Menu();
+    mesas = new List<Mesa>();
 
-            // Agregamos productos predeterminados al menú
-            menu.AgregarProducto(new Producto(1, "Hamburguesa", 8.99m));
-            menu.AgregarProducto(new Producto(2, "Pizza", 12.99m));
-            menu.AgregarProducto(new Producto(3, "Ensalada", 6.50m));
-            menu.AgregarProducto(new Producto(4, "Soda", 2.00m));
+    // Agregamos productos predeterminados al menú
+    menu.AgregarProducto(new Producto(1, "Hamburguesa", 8.99m));
+    menu.AgregarProducto(new Producto(2, "Pizza", 12.99m));
+    menu.AgregarProducto(new Producto(3, "Ensalada", 6.50m));
+    menu.AgregarProducto(new Producto(4, "Soda", 2.00m));
 
-            // Inicializamos 10 mesas, asignando números consecutivos a cada una
-            for (int i = 1; i <= 10; i++)
-            {
-                Mesa mesa = new Mesa();     // Creamos una nueva mesa
-                mesa.SetNumero(i);          // Asignamos un número a la mesa
-                mesas.Add(mesa);            // Añadimos la mesa a la lista de mesas
-            }
-        }
+    // Inicializamos 10 mesas, asignando números consecutivos a cada una
+    for (int i = 1; i <= 10; i++)
+    {
+        Mesa mesa = new Mesa();     // Creamos una nueva mesa
+        mesa.SetNumero(i);          // Asignamos un número a la mesa
+        mesas.Add(mesa);            // Añadimos la mesa a la lista de mesas
+    }
+}
 
         // Método para imprimir el menú del restaurante
         public void ImprimirMenu()

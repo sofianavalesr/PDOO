@@ -23,20 +23,21 @@ public class Menu
 
     // Método para agregar un producto al menú.
     public void AgregarProducto(Producto producto)
+{
+    // Verifica si ya existe un producto con el mismo ID en la lista.
+    if (Productos.Exists(p => p.GetId() == producto.GetId()))
     {
-        // Verifica si ya existe un producto con el mismo ID en la lista.
-        if (Productos.Exists(p => p.GetId() == producto.GetId()))
-        {
-            // Si el ID ya existe, imprime un mensaje de advertencia.
-            Console.WriteLine("El ID ya está en uso, elija otro.");
-        }
-        else
-        {
-            // Si el ID es único, agrega el producto a la lista.
-            Productos.Add(producto);
-            Console.WriteLine("Producto agregado al menú.");
-        }
+        // Si el ID ya existe, imprime un mensaje de advertencia.
+        Console.WriteLine("El ID ya está en uso, elija otro.");
     }
+    else
+    {
+        // Si el ID es único, agrega el producto a la lista.
+        Productos.Add(producto);
+        Console.WriteLine("Producto agregado al menú.");
+    }
+}
+
 
     // Método para editar un producto existente en el menú.
     public void EditarProducto(int id, string nuevoNombre, decimal nuevoPrecio)
