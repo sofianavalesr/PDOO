@@ -3,7 +3,7 @@ namespace Facturacion;
 using System;
 using System.Collections.Generic;
 
-public class Restaurante
+public class Restauranteg
 {
     private Menu menu;
     private List<Mesa> mesas;

@@ -18,7 +18,7 @@ public class Menu
 
     public void AgregarProducto(Producto producto)
     {
-        if (Productos.Exists(p => p.Id == producto.Id))
+        if (Productos.Exists(p => p.GetId() == producto.GetId()))
         {
             Console.WriteLine("El ID ya está en uso, elija otro.");
         }
@@ -31,11 +31,9 @@ public class Menu
 
     public void EditarProducto(int id, string nuevoNombre, decimal nuevoPrecio)
     {
-        Producto? producto = Productos.Find(p => p.Id == id);
+        Producto? producto = Productos.Find(p => p.GetId() == id);
         if (producto != null)
         {
-            producto.SetNombre(nuevoNombre);
-            producto.SetPrecio(nuevoPrecio);
             Console.WriteLine("Producto editado en el menú.");
         }
         else
@@ -46,6 +44,6 @@ public class Menu
 
     public Producto? BuscarProductoPorId(int id)
     {
-        return Productos.Find(p => p.Id == id);
+        return Productos.Find(p => p.GetId() == id);
     }
 }

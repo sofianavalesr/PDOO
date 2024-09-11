@@ -75,3 +75,10 @@ C:\Users\Usuario\Desktop\PDOO\Facturacion\obj\Debug\net8.0\Facturacion.pdb
 C:\Users\Usuario\Desktop\PDOO\Facturacion\obj\Debug\net8.0\Facturacion.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\PDOO\Facturacion\obj\Debug\net8.0\ref\Facturacion.dll
 >>>>>>> 8fbbc2954ee44a0c373dc73692e9eb1fc59cebf9
+D:\taller2\PDOO\Facturacion\bin\Debug\net8.0\Facturacion.exe
+D:\taller2\PDOO\Facturacion\bin\Debug\net8.0\Facturacion.deps.json
+D:\taller2\PDOO\Facturacion\bin\Debug\net8.0\Facturacion.runtimeconfig.json
+D:\taller2\PDOO\Facturacion\bin\Debug\net8.0\Facturacion.dll
+D:\taller2\PDOO\Facturacion\bin\Debug\net8.0\Facturacion.pdb
+D:\taller2\PDOO\Facturacion\obj\Debug\net8.0\Facturacion.genruntimeconfig.cache
+D:\taller2\PDOO\Facturacion\obj\Debug\net8.0\ref\Facturacion.dll
