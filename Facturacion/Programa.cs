@@ -2,9 +2,13 @@ namespace Facturacion;
 
 using System;
 using System.Collections.Generic;
-class Programa
+public class Programa
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Prueba");
+    }
+    /*public static void Main(string[] args)
     {
         List<Producto> menu = new List<Producto>
         {
@@ -190,6 +194,5 @@ class Programa
             }
 
             Console.WriteLine();
-        }
+        }*/
     }
-}

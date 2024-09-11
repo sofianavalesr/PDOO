@@ -1,11 +1,9 @@
 namespace Facturacion;
 public class Producto
 {
-    private int test;
-    private int Id { get; set; }
-    private string Nombre { get; set; }
-    private decimal Precio { get; set; }
-    private string Descripcion{get;set;}
+    public int Id { get; set; }
+    public string Nombre { get; set; }
+    public decimal Precio { get; set; }
 
     public Producto(int id, string nombre, decimal precio)
     {
@@ -13,9 +11,9 @@ public class Producto
         Nombre = nombre;
         Precio = precio;
     }
-    
+
     public override string ToString()
     {
-        return $"ID: {Id}, Nombre: {Nombre}, Precio: {Precio:C}";
+        return $"{Id}. {Nombre} - ${Precio}";
     }
 }
