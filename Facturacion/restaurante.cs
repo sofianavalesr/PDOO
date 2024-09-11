@@ -16,7 +16,7 @@ public class Restauranteg
         // Agregamos productos al menú por defecto
         menu.AgregarProducto(new Producto(1, "Hamburguesa", 8.99m));
         menu.AgregarProducto(new Producto(2, "Pizza", 12.99m));
-      
+        menu.AgregarProducto(new Producto(3, "Ensalada", 6.50m));
 
         // Inicializamos las mesas
         for (int i = 1; i <= 10; i++)
