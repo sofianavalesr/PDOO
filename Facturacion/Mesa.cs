@@ -5,7 +5,6 @@ namespace Facturacion
 {
     public class Mesa
     {
-<<<<<<< HEAD
         // Propiedades privadas de la clase Mesa
         private int Numero { get; set; } // Número de la mesa (propiedad privada)
         private List<Producto> Productos { get; set; } = new List<Producto>(); // Lista de productos en la mesa (inicializada como una lista vacía)
@@ -26,19 +25,6 @@ namespace Facturacion
             Producto? producto = Productos.Find(p => p.GetId() == idProducto);
             
             // Si el producto es encontrado, lo elimina de la lista y muestra un mensaje
-=======
-        private int Numero { get; set; }
-        private List<Producto> Productos { get; set; } = new List<Producto>();
-
-        public int GetNumero() => Numero;
-        public void SetNumero(int numero) => Numero = numero;
-
-        public void AgregarProducto(Producto producto) => Productos.Add(producto);
-
-        public void EliminarProducto(int idProducto)
-        {
-            Producto? producto = Productos.Find(p => p.GetId() == idProducto);
->>>>>>> bd75e6fbb514c55cb43ba695d9542b3fef315c6f
             if (producto != null)
             {
                 Productos.Remove(producto);
@@ -46,52 +32,39 @@ namespace Facturacion
             }
             else
             {
-<<<<<<< HEAD
                 // Si el producto no es encontrado, muestra un mensaje de error
-=======
->>>>>>> bd75e6fbb514c55cb43ba695d9542b3fef315c6f
                 Console.WriteLine("Producto no encontrado en la mesa.");
             }
         }
 
+        // Método para calcular el total de los precios de los productos en la mesa
         public decimal ObtenerTotal()
         {
-<<<<<<< HEAD
             decimal total = 0; // Inicializa el total en 0
             
             // Recorre cada producto en la lista y suma su precio al total
-=======
-            decimal total = 0;
->>>>>>> bd75e6fbb514c55cb43ba695d9542b3fef315c6f
             foreach (var producto in Productos)
             {
                 total += producto.GetPrecio();
             }
-<<<<<<< HEAD
             
             // Devuelve el total calculado
-=======
->>>>>>> bd75e6fbb514c55cb43ba695d9542b3fef315c6f
             return total;
         }
 
+        // Método para imprimir la cuenta de la mesa
         public void ImprimirCuenta()
         {
+            // Imprime el encabezado con el número de la mesa
             Console.WriteLine($"Cuenta para la mesa {Numero}:");
-<<<<<<< HEAD
             
             // Recorre la lista de productos y los imprime
-=======
->>>>>>> bd75e6fbb514c55cb43ba695d9542b3fef315c6f
             foreach (var producto in Productos)
             {
                 Console.WriteLine(producto.ToString());
             }
-<<<<<<< HEAD
             
             // Imprime el total final de la cuenta
-=======
->>>>>>> bd75e6fbb514c55cb43ba695d9542b3fef315c6f
             Console.WriteLine($"Total: ${ObtenerTotal()}");
         }
     }
