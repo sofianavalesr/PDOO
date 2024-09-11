@@ -1,9 +1,8 @@
 namespace Facturacion;
-
-// Program.cs
+// Programa.cs
 using System;
 
-class Programa 
+class Programa
 {
     static void Main(string[] args)
     {
@@ -13,14 +12,14 @@ class Programa
         while (continuar)
         {
             Console.WriteLine("1. Imprimir menú del restaurante");
-            Console.WriteLine("2. Agregar productos a una mesa");
-            Console.WriteLine("3. Editar productos de una mesa");
-            Console.WriteLine("4. Editar el menú del restaurante");
-            Console.WriteLine("5. Imprimir la cuenta de la mesa");
-            Console.WriteLine("6. Buscar productos por ID");
+            Console.WriteLine("2. Agregar producto a una mesa");
+            Console.WriteLine("3. Editar productos de una mesa (agregar/eliminar)");
+            Console.WriteLine("4. Editar menú del restaurante");
+            Console.WriteLine("5. Imprimir cuenta de una mesa");
+            Console.WriteLine("6. Buscar producto por ID");
             Console.WriteLine("7. Salir");
-            Console.Write("Seleccione una opción: ");
-            int opcion = int.Parse(Console.ReadLine());
+            Console.Write("Elija una opción: ");
+            int opcion = Convert.ToInt32(Console.ReadLine());
 
             switch (opcion)
             {
@@ -29,47 +28,54 @@ class Programa
                     break;
 
                 case 2:
-                    Console.Write("Ingrese el número de la mesa: ");
-                    int numeroMesa = int.Parse(Console.ReadLine());
-                    Console.Write("Ingrese el ID del producto que desea agregar: ");
-                    int idProducto = int.Parse(Console.ReadLine());
+                    Console.Write("Número de mesa: ");
+                    int numeroMesa = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("ID del producto: ");
+                    int idProducto = Convert.ToInt32(Console.ReadLine());
                     restaurante.AgregarProductoAMesa(numeroMesa, idProducto);
                     break;
 
                 case 3:
-                    Console.Write("Ingrese el número de la mesa: ");
-                    numeroMesa = int.Parse(Console.ReadLine());
-                    Console.WriteLine("1. Agregar producto");
-                    Console.WriteLine("2. Eliminar producto");
-                    int opcionEditarMesa = int.Parse(Console.ReadLine());
-                    Console.Write("Ingrese el ID del producto: ");
-                    idProducto = int.Parse(Console.ReadLine());
-                    restaurante.EditarProductosMesa(numeroMesa, opcionEditarMesa, idProducto);
+                    Console.Write("Número de mesa: ");
+                    numeroMesa = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("¿Desea agregar o eliminar un producto? (1: Agregar, 2: Eliminar): ");
+                    int opcionEditar = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("ID del producto: ");
+                    idProducto = Convert.ToInt32(Console.ReadLine());
+                    restaurante.EditarProductosMesa(numeroMesa, opcionEditar, idProducto);
                     break;
 
                 case 4:
-                    Console.WriteLine("1. Agregar nuevo producto");
-                    Console.WriteLine("2. Editar producto existente");
-                    int opcionEditarMenu = int.Parse(Console.ReadLine());
-                    Console.Write("Ingrese el ID del producto: ");
-                    int idMenu = int.Parse(Console.ReadLine());
-                    Console.Write("Ingrese el nombre del producto: ");
-                    string nombre = Console.ReadLine();
-                    Console.Write("Ingrese el precio del producto: ");
-                    decimal precio = decimal.Parse(Console.ReadLine());
-                    restaurante.EditarMenu(idMenu, nombre, precio, opcionEditarMenu == 1);
+                    Console.Write("ID del producto en el menú: ");
+                    int idMenu = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Nombre del producto: ");
+                    string? nombre = Console.ReadLine();
+                    Console.Write("Precio del producto: ");
+                    decimal precio = Convert.ToDecimal(Console.ReadLine());
+                    Console.Write("¿Desea agregar un nuevo producto o editar uno existente? (1: Agregar, 2: Editar): ");
+                    int opcionEditarMenu = Convert.ToInt32(Console.ReadLine());
+
+                    if (!string.IsNullOrEmpty(nombre))
+                    {
+                        restaurante.EditarMenu(idMenu, nombre, precio, opcionEditarMenu == 1);
+                    }
+                    else
+                    {
+                        Console.WriteLine("El nombre no puede ser nulo o vacío.");
+                    }
                     break;
 
                 case 5:
-                    Console.Write("Ingrese el número de la mesa: ");
-                    numeroMesa = int.Parse(Console.ReadLine());
+                    Console.Write("Número de mesa: ");
+                    numeroMesa = Convert.ToInt32(Console.ReadLine());
                     restaurante.ImprimirCuentaMesa(numeroMesa);
                     break;
 
                 case 6:
-                    Console.Write("Ingrese el ID del producto que desea buscar: ");
-                    int idBuscar = int.Parse(Console.ReadLine());
-                    Producto producto = restaurante.BuscarProductoPorId(idBuscar);
+                    Console.Write("ID del producto a buscar: ");
+                    int idBuscar = Convert.ToInt32(Console.ReadLine());
+                    Producto? producto = restaurante.BuscarProductoPorId(idBuscar);
+
                     if (producto != null)
                     {
                         Console.WriteLine(producto.ToString());
@@ -88,8 +94,6 @@ class Programa
                     Console.WriteLine("Opción no válida.");
                     break;
             }
-
-            Console.WriteLine();
         }
     }
 }
