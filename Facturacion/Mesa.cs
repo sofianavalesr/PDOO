@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class Mesa
 {
-    public int Numero { get; set; }
+    private int Numero { get; set; }
     public List<Producto> Productos { get; set; } = new List<Producto>();
 
     public void AgregarProducto(Producto producto)
