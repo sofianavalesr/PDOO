@@ -1,48 +1,39 @@
-// Namespace que agrupa todas las clases relacionadas con la facturación
+using System;
+using System.Collections.Generic;
+
 namespace Facturacion
 {
-    // Importamos las bibliotecas necesarias
-    using System;
-    using System.Collections.Generic;
-
-    // Definimos la clase Restaurante, que gestiona las mesas y el menú de un restaurante
     public class Restaurante
     {
-        // Propiedad privada que almacena el menú del restaurante
-        private Menu menu;
-
-        // Lista privada que contiene las mesas del restaurante
-        private List<Mesa> mesas;
+        private Menu menu; // Instancia de la clase Menu que representa el menú del restaurante
+        private List<Mesa> mesas; // Lista de instancias de la clase Mesa, representa todas las mesas en el restaurante
 
         // Constructor de la clase Restaurante
         public Restaurante()
-{
-    // Inicializamos el menú y la lista de mesas
-    menu = new Menu();
-    mesas = new List<Mesa>();
-
-    // Agregamos productos predeterminados al menú
-    menu.AgregarProducto(new Producto(1, "Hamburguesa", 8.99m));
-    menu.AgregarProducto(new Producto(2, "Pizza", 12.99m));
-    menu.AgregarProducto(new Producto(3, "Ensalada", 6.50m));
-    menu.AgregarProducto(new Producto(4, "Soda", 2.00m));
-
-    // Inicializamos 10 mesas, asignando números consecutivos a cada una
-    for (int i = 1; i <= 10; i++)
-    {
-        Mesa mesa = new Mesa();     // Creamos una nueva mesa
-        mesa.SetNumero(i);          // Asignamos un número a la mesa
-        mesas.Add(mesa);            // Añadimos la mesa a la lista de mesas
-    }
-}
-
-        // Método para imprimir el menú del restaurante
-        public void ImprimirMenu()
         {
-            menu.ImprimirMenu();  // Llama al método ImprimirMenu de la clase Menu
+            // Inicializa el menú y las mesas
+            menu = new Menu();
+            mesas = new List<Mesa>();
+
+            // Agrega productos iniciales al menú
+            menu.AgregarProducto(new Producto(1, "Hamburguesa", 8.99m), false);
+            menu.AgregarProducto(new Producto(2, "Pizza", 12.99m), false);
+            menu.AgregarProducto(new Producto(3, "Ensalada", 6.50m), false);
+            menu.AgregarProducto(new Producto(4, "Soda", 2.00m), false);
+
+            // Inicializa las mesas numeradas del 1 al 10
+            for (int i = 1; i <= 10; i++)
+            {
+                Mesa mesa = new Mesa();
+                mesa.SetNumero(i); // Establece el número de la mesa
+                mesas.Add(mesa); // Agrega la mesa a la lista de mesas
+            }
         }
 
-        // Método para agregar un producto a una mesa
+        // Método para imprimir el menú del restaurante
+        public void ImprimirMenu() => menu.ImprimirMenu();
+
+        // Método para agregar un producto a una mesa específica
         public void AgregarProductoAMesa(int numeroMesa, int idProducto)
         {
             // Busca la mesa por su número
@@ -50,34 +41,33 @@ namespace Facturacion
             // Busca el producto por su ID en el menú
             Producto? producto = menu.BuscarProductoPorId(idProducto);
 
-            // Si la mesa y el producto existen, los agrega
             if (mesa != null && producto != null)
             {
-                mesa.AgregarProducto(producto);  // Agrega el producto a la mesa
-                Console.WriteLine("Producto agregado a la mesa.");  // Mensaje de confirmación
+                // Si se encuentran tanto la mesa como el producto, agrega el producto a la mesa
+                mesa.AgregarProducto(producto);
+                Console.WriteLine("Producto agregado a la mesa.");
             }
             else
             {
-                // Si no se encuentra la mesa o el producto, muestra el mensaje correspondiente
+                // Muestra un mensaje de error si no se encuentra la mesa o el producto
                 Console.WriteLine(mesa == null ? "Mesa no encontrada." : "Producto no encontrado.");
             }
         }
 
-        // Método para editar los productos de una mesa (agregar o eliminar)
+        // Método para editar los productos en una mesa
         public void EditarProductosMesa(int numeroMesa, int opcion, int idProducto)
         {
             // Busca la mesa por su número
             Mesa? mesa = mesas.Find(m => m.GetNumero() == numeroMesa);
-
             if (mesa != null)
             {
-                if (opcion == 1) // Agregar producto
+                // Si la opción es 1, agrega el producto a la mesa
+                if (opcion == 1)
                 {
-                    // Busca el producto en el menú
                     Producto? producto = menu.BuscarProductoPorId(idProducto);
                     if (producto != null)
                     {
-                        mesa.AgregarProducto(producto);  // Agrega el producto a la mesa
+                        mesa.AgregarProducto(producto);
                         Console.WriteLine("Producto agregado a la mesa.");
                     }
                     else
@@ -85,19 +75,19 @@ namespace Facturacion
                         Console.WriteLine("Producto no encontrado.");
                     }
                 }
-                else if (opcion == 2) // Eliminar producto
+                // Si la opción es 2, elimina el producto de la mesa
+                else if (opcion == 2)
                 {
-                    // Elimina el producto de la mesa
                     mesa.EliminarProducto(idProducto);
                 }
             }
             else
             {
-                Console.WriteLine("Mesa no encontrada.");  // Mensaje si no se encuentra la mesa
+                Console.WriteLine("Mesa no encontrada.");
             }
         }
 
-        // Método para editar el menú (agregar un producto nuevo o editar uno existente)
+        // Método para agregar o editar un producto en el menú
         public void EditarMenu(int id, string nombre, decimal precio, bool esNuevoProducto)
         {
             if (esNuevoProducto)
@@ -107,7 +97,7 @@ namespace Facturacion
             }
             else
             {
-                // Si no, edita un producto existente en el menú
+                // Si es un producto existente, lo edita en el menú
                 menu.EditarProducto(id, nombre, precio);
             }
         }
@@ -119,18 +109,16 @@ namespace Facturacion
             Mesa? mesa = mesas.Find(m => m.GetNumero() == numeroMesa);
             if (mesa != null)
             {
-                mesa.ImprimirCuenta();  // Imprime la cuenta de la mesa
+                // Imprime la cuenta de la mesa
+                mesa.ImprimirCuenta();
             }
             else
             {
-                Console.WriteLine("Mesa no encontrada.");  // Mensaje si no se encuentra la mesa
+                Console.WriteLine("Mesa no encontrada.");
             }
         }
 
-        // Método para buscar un producto por su ID en el menú
-        public Producto? BuscarProductoPorId(int id)
-        {
-            return menu.BuscarProductoPorId(id);  // Llama al método correspondiente en la clase Menu
-        }
+        // Método para buscar un producto en el menú por su ID
+        public Producto? BuscarProductoPorId(int id) => menu.BuscarProductoPorId(id);
     }
 }

@@ -1,52 +1,38 @@
-// Namespace que agrupa todas las clases relacionadas con la facturación
+using System;
+using System.Collections.Generic;
+
 namespace Facturacion
 {
-    // Importamos las bibliotecas necesarias
-    using System;
-    using System.Collections.Generic;
-
-    // Definimos la clase Mesa, que representa una mesa en un restaurante u otro negocio similar
     public class Mesa
     {
-        // Propiedad privada para almacenar el número de la mesa
-        private int Numero { get; set; }
+        // Propiedades privadas de la clase Mesa
+        private int Numero { get; set; } // Número de la mesa (propiedad privada)
+        private List<Producto> Productos { get; set; } = new List<Producto>(); // Lista de productos en la mesa (inicializada como una lista vacía)
 
-        // Lista privada para almacenar los productos asociados a la mesa
-        private List<Producto> Productos { get; set; } = new List<Producto>();
+        // Método para obtener el número de la mesa
+        public int GetNumero() => Numero;
+
+        // Método para establecer el número de la mesa
+        public void SetNumero(int numero) => Numero = numero;
 
         // Método para agregar un producto a la lista de productos de la mesa
-        public void AgregarProducto(Producto producto)
-        {
-            Productos.Add(producto);  // Agrega el producto a la lista
-        }
-        
-        // Método para obtener el número de la mesa
-        public int GetNumero()
-        {
-            return Numero;  // Devuelve el número de la mesa
-        }
-        
-        // Método para establecer el número de la mesa
-        public void SetNumero(int numero)
-        {
-            Numero = numero;  // Asigna el número de la mesa
-        }
+        public void AgregarProducto(Producto producto) => Productos.Add(producto);
 
-        // Método para eliminar un producto de la mesa usando su ID
+        // Método para eliminar un producto de la lista de productos de la mesa por su ID
         public void EliminarProducto(int idProducto)
         {
-            // Busca el producto en la lista de productos de la mesa por su ID
+            // Busca el producto en la lista usando el ID
             Producto? producto = Productos.Find(p => p.GetId() == idProducto);
-
-            // Si el producto existe, lo elimina de la lista
+            
+            // Si el producto es encontrado, lo elimina de la lista y muestra un mensaje
             if (producto != null)
             {
                 Productos.Remove(producto);
-                Console.WriteLine("Producto eliminado de la mesa.");  // Mensaje de confirmación
+                Console.WriteLine("Producto eliminado de la mesa.");
             }
             else
             {
-                // Si no se encuentra el producto, se muestra un mensaje de error
+                // Si el producto no es encontrado, muestra un mensaje de error
                 Console.WriteLine("Producto no encontrado en la mesa.");
             }
         }
@@ -54,15 +40,15 @@ namespace Facturacion
         // Método para calcular el total de los precios de los productos en la mesa
         public decimal ObtenerTotal()
         {
-            decimal total = 0;  // Variable para almacenar el total
-
+            decimal total = 0; // Inicializa el total en 0
+            
             // Recorre cada producto en la lista y suma su precio al total
             foreach (var producto in Productos)
             {
-                total += producto.GetPrecio();  // Suma el precio del producto
+                total += producto.GetPrecio();
             }
-
-            // Devuelve el total de la cuenta
+            
+            // Devuelve el total calculado
             return total;
         }
 
@@ -71,13 +57,13 @@ namespace Facturacion
         {
             // Imprime el encabezado con el número de la mesa
             Console.WriteLine($"Cuenta para la mesa {Numero}:");
-
-            // Recorre la lista de productos y los imprime uno por uno
+            
+            // Recorre la lista de productos y los imprime
             foreach (var producto in Productos)
             {
-                Console.WriteLine(producto.ToString());  // Llama al método ToString() de Producto
+                Console.WriteLine(producto.ToString());
             }
-
+            
             // Imprime el total final de la cuenta
             Console.WriteLine($"Total: ${ObtenerTotal()}");
         }

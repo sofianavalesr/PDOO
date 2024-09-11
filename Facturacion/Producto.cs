@@ -1,42 +1,31 @@
-namespace Facturacion; // Define el espacio de nombres "Facturacion".
-
-public class Producto
+namespace Facturacion
 {
-    // Atributos privados de la clase.
-    private int Id { get; set; } // ID único del producto, que solo se puede modificar dentro de la clase.
-    private string Nombre; // Nombre del producto.
-    private decimal Precio; // Precio del producto.
-
-    // Constructor que inicializa los valores de los atributos cuando se crea una instancia de Producto.
-    public Producto(int id, string nombre, decimal precio)
+    public class Producto
     {
-        Id = id; // Asigna el ID al atributo privado.
-        Nombre = nombre; // Asigna el nombre al atributo privado.
-        Precio = precio; // Asigna el precio al atributo privado.
-    }
+        // Propiedades privadas del producto
+        private int Id { get; set; } // Identificador único del producto (propiedad privada)
+        private string Nombre; // Nombre del producto (campo privado)
+        private decimal Precio; // Precio del producto (campo privado)
 
-    // Método que retorna el valor del atributo privado 'Id'.
-    public int GetId()
-    {
-        return Id; // Devuelve el ID del producto.
-    }
+        // Constructor que inicializa las propiedades del producto
+        public Producto(int id, string nombre, decimal precio)
+        {
+            Id = id; // Asigna el ID del producto
+            Nombre = nombre; // Asigna el nombre del producto
+            Precio = precio; // Asigna el precio del producto
+        }
 
-    // Método que retorna el valor del atributo privado 'Nombre'.
-    public string GetNombre()
-    {
-        return Nombre; // Devuelve el nombre del producto.
-    }
+        // Método para obtener el ID del producto (getter)
+        public int GetId() => Id;
 
-    // Método que retorna el valor del atributo privado 'Precio'.
-    public decimal GetPrecio()
-    {
-        return Precio; // Devuelve el precio del producto.
-    }
+        // Método para obtener el nombre del producto (getter)
+        public string GetNombre() => Nombre;
 
-    // Sobreescribe el método ToString() para devolver una representación del producto como texto.
-    public override string ToString()
-    {
-        // Retorna una cadena con el formato: ID. Nombre - Precio
-        return $"{Id}. {GetNombre()} - ${GetPrecio()}";
+        // Método para obtener el precio del producto (getter)
+        public decimal GetPrecio() => Precio;
+
+        // Sobrescribe el método ToString() para devolver una representación en cadena del producto
+        // Devuelve el ID, nombre y precio del producto formateado en una cadena legible
+        public override string ToString() => $"{Id}. {Nombre} - ${Precio}";
     }
 }
