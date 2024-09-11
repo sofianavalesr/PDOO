@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "8X9hkiSQiHo=",
   "success": true,
   "projectFilePath": "D:\\taller2\\PDOO\\Facturacion\\Facturacion.csproj",
+=======
+  "dgSpecHash": "bJYfTw4dZmg=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\PDOO\\Facturacion\\Facturacion.csproj",
+>>>>>>> 8fbbc2954ee44a0c373dc73692e9eb1fc59cebf9
   "expectedPackageFiles": [],
   "logs": []
 }

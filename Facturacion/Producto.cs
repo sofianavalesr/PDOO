@@ -1,10 +1,13 @@
 namespace Facturacion;
 public class Producto
 {
-    public int Id { get; set; }
-    public string Nombre { get; set; }
-    public decimal Precio { get; set; }
+    private int Id { get; set; }
+    private string Nombre { get; set; }
+    private decimal Precio { get; set; }
 
+    public Producto(){
+
+    }
     public Producto(int id, string nombre, decimal precio)
     {
         Id = id;
