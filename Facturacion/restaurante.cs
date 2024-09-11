@@ -12,9 +12,20 @@ public class Restaurante
     {
         menu = new Menu();
         mesas = new List<Mesa>();
+
+        // Agregamos productos al menú por defecto
+        menu.AgregarProducto(new Producto(1, "Hamburguesa", 8.99m));
+        menu.AgregarProducto(new Producto(2, "Pizza", 12.99m));
+        menu.AgregarProducto(new Producto(3, "Ensalada", 6.50m));
+        menu.AgregarProducto(new Producto(4, "Soda", 2.00m));
+
+        // Inicializamos las mesas
         for (int i = 1; i <= 10; i++)
         {
-            mesas.Add(new Mesa { Numero = i });
+            Mesa mesa = new Mesa();
+            mesa.SetNumero(i);
+
+            mesas.Add(mesa); 
         }
     }
 
@@ -25,7 +36,7 @@ public class Restaurante
 
     public void AgregarProductoAMesa(int numeroMesa, int idProducto)
     {
-        Mesa? mesa = mesas.Find(m => m.Numero == numeroMesa);
+        Mesa? mesa = mesas.Find(m => m.GetNumero() == numeroMesa);
         Producto? producto = menu.BuscarProductoPorId(idProducto);
 
         if (mesa != null && producto != null)
@@ -41,7 +52,7 @@ public class Restaurante
 
     public void EditarProductosMesa(int numeroMesa, int opcion, int idProducto)
     {
-        Mesa? mesa = mesas.Find(m => m.Numero == numeroMesa);
+        Mesa? mesa = mesas.Find(m => m.GetNumero() == numeroMesa);
 
         if (mesa != null)
         {
@@ -83,7 +94,7 @@ public class Restaurante
 
     public void ImprimirCuentaMesa(int numeroMesa)
     {
-        Mesa? mesa = mesas.Find(m => m.Numero == numeroMesa);
+        Mesa? mesa = mesas.Find(m => m.GetNumero() == numeroMesa);
         if (mesa != null)
         {
             mesa.ImprimirCuenta();
