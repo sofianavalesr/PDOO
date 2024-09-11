@@ -3,7 +3,7 @@ namespace Facturacion;
 // Program.cs
 using System;
 
-class Program
+class Programa 
 {
     static void Main(string[] args)
     {
