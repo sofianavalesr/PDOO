@@ -13,19 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\PDOO\\Facturacion\\Facturacion.csproj",
-      "projectName": "Facturacion",
-      "projectPath": "C:\\Users\\Usuario\\Desktop\\PDOO\\Facturacion\\Facturacion.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Desktop\\PDOO\\Facturacion\\obj\\",
-=======
       "projectUniqueName": "D:\\taller2\\PDOO\\Facturacion\\Facturacion.csproj",
       "projectName": "Facturacion",
       "projectPath": "D:\\taller2\\PDOO\\Facturacion\\Facturacion.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
       "outputPath": "D:\\taller2\\PDOO\\Facturacion\\obj\\",
->>>>>>> 953e90bf60722e0a97dd4471e79abcbd961b3a55
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -81,11 +73,7 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-<<<<<<< HEAD
-      "message": "Problema al leer el archivo de caché C:\\Users\\Usuario\\Desktop\\PDOO\\Facturacion\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-=======
       "message": "Problema al leer el archivo de caché D:\\taller2\\PDOO\\Facturacion\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
->>>>>>> 953e90bf60722e0a97dd4471e79abcbd961b3a55
     }
   ]
 }

@@ -28,6 +28,18 @@ public class Restaurante
             mesas.Add(mesa); 
         }
     }
+    // Método para imprimir con un marco
+    public void ImprimirConMarco(Action contenido)
+    {
+        int ancho = 30; // Ancho del marco, ajusta si es necesario
+        string lineaSuperior = "╔" + new string('═', ancho - 2) + "╗";
+        string lineaInferior = "╚" + new string('═', ancho - 2) + "╝";
+
+        Console.WriteLine(lineaSuperior);
+        contenido();
+        Console.WriteLine(lineaInferior);
+    }
+
 
     public void ImprimirMenu()
     {
