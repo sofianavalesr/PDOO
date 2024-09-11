@@ -12,6 +12,12 @@ public class Restaurante
     {
         menu = new Menu();
         mesas = new List<Mesa>();
+
+        // Agregamos productos al menú por defecto
+        menu.AgregarProducto(new Producto(1, "Hamburguesa", 8.99m));
+      
+
+        // Inicializamos las mesas
         for (int i = 1; i <= 10; i++)
         {
             mesas.Add(new Mesa { Numero = i });
