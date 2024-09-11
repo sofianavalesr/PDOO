@@ -5,14 +5,18 @@ using System.Collections.Generic;
 
 public class Mesa
 {
-    public int Numero { get; set; }
-    public List<Producto> Productos { get; set; } = new List<Producto>();
+    private int Numero { get; set; }
+    private List<Producto> Productos { get; set; } = new List<Producto>();
 
     public void AgregarProducto(Producto producto)
     {
         Productos.Add(producto);
     }
+    public Mesa (int numero)
+    {Numero = numero;}
+    public int GetNumero(){return Numero;}
 
+    
     public void EliminarProducto(int idProducto)
     {
         Producto? producto = Productos.Find(p => p.GetId() == idProducto);
