@@ -2,6 +2,7 @@ namespace Facturacion
 {
     public class Producto
     {
+<<<<<<< HEAD
         // Propiedades privadas del producto
         private int Id { get; set; } // Identificador único del producto (propiedad privada)
         private string Nombre; // Nombre del producto (campo privado)
@@ -29,3 +30,23 @@ namespace Facturacion
         public override string ToString() => $"{Id}. {Nombre} - ${Precio}";
     }
 }
+=======
+        private int Id { get; set; }
+        private string Nombre;
+        private decimal Precio;
+
+        public Producto(int id, string nombre, decimal precio)
+        {
+            Id = id;
+            Nombre = nombre;
+            Precio = precio;
+        }
+
+        public int GetId() => Id;
+        public string GetNombre() => Nombre;
+        public decimal GetPrecio() => Precio;
+
+        public override string ToString() => $"{Id}. {Nombre} - ${Precio}";
+    }
+}
+>>>>>>> bd75e6fbb514c55cb43ba695d9542b3fef315c6f
