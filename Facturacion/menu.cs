@@ -34,8 +34,8 @@ public class Menu
         Producto? producto = Productos.Find(p => p.Id == id);
         if (producto != null)
         {
-            producto.Nombre = nuevoNombre;
-            producto.Precio = nuevoPrecio;
+            producto.SetNombre(nuevoNombre);
+            producto.SetPrecio(nuevoPrecio);
             Console.WriteLine("Producto editado en el menú.");
         }
         else

@@ -15,7 +15,7 @@ public class Mesa
 
     public void EliminarProducto(int idProducto)
     {
-        Producto? producto = Productos.Find(p => p.Id == idProducto);
+        Producto? producto = Productos.Find(p => p.GetId() == idProducto);
         if (producto != null)
         {
             Productos.Remove(producto);
@@ -32,7 +32,7 @@ public class Mesa
         decimal total = 0;
         foreach (var producto in Productos)
         {
-            total += producto.Precio;
+            total += producto.GetPrecio();
         }
         return total;
     }

@@ -1,15 +1,25 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "bJYfTw4dZmg=",
   "success": true,
   "projectFilePath": "C:\\Users\\Usuario\\Desktop\\PDOO\\Facturacion\\Facturacion.csproj",
+=======
+  "dgSpecHash": "8X9hkiSQiHo=",
+  "success": true,
+  "projectFilePath": "D:\\taller2\\PDOO\\Facturacion\\Facturacion.csproj",
+>>>>>>> 953e90bf60722e0a97dd4471e79abcbd961b3a55
   "expectedPackageFiles": [],
   "logs": [
     {
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Problema al leer el archivo de caché C:\\Users\\Usuario\\Desktop\\PDOO\\Facturacion\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Problema al leer el archivo de caché D:\\taller2\\PDOO\\Facturacion\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> 953e90bf60722e0a97dd4471e79abcbd961b3a55
     }
   ]
 }
