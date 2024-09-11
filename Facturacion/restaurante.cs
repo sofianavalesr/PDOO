@@ -34,7 +34,7 @@ public class Restauranteg
 
     public void AgregarProductoAMesa(int numeroMesa, int idProducto)
     {
-        Mesa? mesa = mesas.Find(m => m.Numero == numeroMesa);
+       Mesa? mesa = mesas.Find(m => m.GetNumero() == numeroMesa);;
         Producto? producto = menu.BuscarProductoPorId(idProducto);
 
         if (mesa != null && producto != null)
