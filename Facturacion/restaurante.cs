@@ -25,8 +25,8 @@ public class Restaurante
 
     public void AgregarProductoAMesa(int numeroMesa, int idProducto)
     {
-        Mesa mesa = mesas.Find(m => m.Numero == numeroMesa);
-        Producto producto = menu.BuscarProductoPorId(idProducto);
+        Mesa? mesa = mesas.Find(m => m.Numero == numeroMesa);
+        Producto? producto = menu.BuscarProductoPorId(idProducto);
 
         if (mesa != null && producto != null)
         {
@@ -41,13 +41,13 @@ public class Restaurante
 
     public void EditarProductosMesa(int numeroMesa, int opcion, int idProducto)
     {
-        Mesa mesa = mesas.Find(m => m.Numero == numeroMesa);
+        Mesa? mesa = mesas.Find(m => m.Numero == numeroMesa);
 
         if (mesa != null)
         {
             if (opcion == 1) // Agregar producto
             {
-                Producto producto = menu.BuscarProductoPorId(idProducto);
+                Producto? producto = menu.BuscarProductoPorId(idProducto);
                 if (producto != null)
                 {
                     mesa.AgregarProducto(producto);
@@ -83,7 +83,7 @@ public class Restaurante
 
     public void ImprimirCuentaMesa(int numeroMesa)
     {
-        Mesa mesa = mesas.Find(m => m.Numero == numeroMesa);
+        Mesa? mesa = mesas.Find(m => m.Numero == numeroMesa);
         if (mesa != null)
         {
             mesa.ImprimirCuenta();
@@ -94,7 +94,7 @@ public class Restaurante
         }
     }
 
-    public Producto BuscarProductoPorId(int id)
+    public Producto? BuscarProductoPorId(int id)
     {
         return menu.BuscarProductoPorId(id);
     }
