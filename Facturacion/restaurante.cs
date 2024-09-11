@@ -50,7 +50,7 @@ public class Restauranteg
 
     public void EditarProductosMesa(int numeroMesa, int opcion, int idProducto)
     {
-        Mesa? mesa = mesas.Find(m => m.Numero == numeroMesa);
+        Mesa? mesa = mesas.Find(m => m.GetNumero() == numeroMesa);;
 
         if (mesa != null)
         {
@@ -92,7 +92,7 @@ public class Restauranteg
 
     public void ImprimirCuentaMesa(int numeroMesa)
     {
-        Mesa? mesa = mesas.Find(m => m.Numero == numeroMesa);
+        Mesa? mesa = mesas.Find(m => m.GetNumero() == numeroMesa);
         if (mesa != null)
         {
             mesa.ImprimirCuenta();
