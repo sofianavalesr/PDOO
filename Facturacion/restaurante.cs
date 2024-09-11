@@ -22,7 +22,10 @@ public class Restaurante
         // Inicializamos las mesas
         for (int i = 1; i <= 10; i++)
         {
-            mesas.Add(new Mesa { Numero = i });
+            Mesa mesa = new Mesa();
+            mesa.SetNumero(i);
+
+            mesas.Add(mesa); 
         }
     }
 

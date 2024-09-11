@@ -12,9 +12,10 @@ public class Mesa
     {
         Productos.Add(producto);
     }
-    public Mesa (int numero)
-    {Numero = numero;}
+    
     public int GetNumero(){return Numero;}
+    
+    public void  SetNumero(int numero){ Numero = numero;}
 
     
     public void EliminarProducto(int idProducto)
